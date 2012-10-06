@@ -25,3 +25,5 @@ intersection kernel.
 LibSVM with Intersection + Chi Square Kernels:
 http://dovgalecs.com/blog/libsvm-3-0-matlab-with-intersection-kernel/
 
+
+Experiment source: experiment.m
