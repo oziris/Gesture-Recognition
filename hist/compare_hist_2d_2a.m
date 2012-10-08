@@ -1,10 +1,14 @@
 function [d1, d2] = compare_hist_2d_2a(X, y, action1, action2, idx, measure)
-%COMPARE_HIST_2D Compare h(idx) to all the rest h(i).
+%COMPARE_HIST_2D Compare intraclass h(idx) to all the rest h(i) for action1
+% and interclass between action1 and action2.
 %
 % [d1, d2] = compare_hist_2d_2a( X, y, action, idx, measure )
 %
 %   X - [m x n], m normalized histograms 
 %   dist_name: 'l2', 'chi2', 'hell', 'intersect'
+%
+%   Eg.: [d1, d2] = compare_hist_2d_2a(X, y, 5, 8, 1, 'l2');
+%        plot_comparison_2d(d1, d2)
 %
 % Author: Samo Sela
 % e-mail: samo.sela-at-gmail.com

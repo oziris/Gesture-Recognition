@@ -1,11 +1,14 @@
 function [M] = compare_hist_3d(X, y, action, measure)
-%COMPARE_HIST_3D
+%COMPARE_HIST_3D Compare intraclass for all i,j: h(i) & h(j).
 %
 % [M] = compare_hist_3d(X, y, action, measure)
 %
 %   X - [m x n], m normalized histograms 
 %   dist_name: 'l2', 'chi2', 'hell', 'intersect'
 % 
+%   Eg.: M = compare_hist_3d(X, y, 5, 'l2');
+%        plot_comparison_3d(M)
+%
 % Author: Samo Sela
 % e-mail: samo.sela-at-gmail.com
 
