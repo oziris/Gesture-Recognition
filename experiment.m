@@ -17,11 +17,17 @@
 % e-mail: samo.sela-at-gmail.com
 
 %%=========================================================================
+%% PATH SETUP
+addpath('hist');
+addpath('libsvmhist');
+addpath('svm');
+
+% path to the dataset folder
+DATA_PATH = '~/workspace/rahul/dg1public/';
+%%=========================================================================
 %% LOAD DATASET
 fprintf('\n===========================================================\n');
 fprintf('Load dataset\n');
-
-DATA_PATH = '/home/samo/workspace/rahul/dg1public/';
 
 if exist([ DATA_PATH 'DATASET.mat'],'file')
     load([ DATA_PATH 'DATASET.mat']);
