@@ -18,9 +18,10 @@
 
 %%=========================================================================
 %% PATH SETUP
-addpath('hist');
-addpath('libsvmhist');
-addpath('svm');
+addpath( pwd )
+addpath([ pwd '/hist']);
+addpath([ pwd '/libsvmhist']);
+addpath([ pwd '/svm']);
 
 % path to the dataset folder
 DATA_PATH = '~/workspace/rahul/dg1public/';

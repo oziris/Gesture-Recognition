@@ -2,6 +2,9 @@ function kmeans_example()
 %KMEANS_EXAMPLE 
 %   
 % matlab/octave example of kmeans clustering
+%
+% Author: Samo Sela
+% e-mail: samo.sela-at-gmail.com
 
 X = [randn(1000,2)+ones(1000,2);...
      randn(1000,2)-ones(1000,2)];
