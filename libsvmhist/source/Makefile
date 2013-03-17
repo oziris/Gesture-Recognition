@@ -23,32 +23,33 @@ OCTAVE_CFLAGS = -Wall -O3 -fPIC -I$(OCTAVEDIR)
 
 all:	matlab
 
-matlab:	binary
+matlab:	binary copyfiles
 
 octave:
 	@make MEX="$(OCTAVE_MEX)" MEX_OPTION="$(OCTAVE_MEX_OPTION)" \
 	MEX_EXT="$(OCTAVE_MEX_EXT)" CFLAGS="$(OCTAVE_CFLAGS)" \
 	binary
 
-binary: svmpredict.$(MEX_EXT) svmtrain.$(MEX_EXT) libsvmread.$(MEX_EXT) libsvmwrite.$(MEX_EXT)
+binary: libsvmpredict.$(MEX_EXT) libsvmtrain.$(MEX_EXT) libsvmread.$(MEX_EXT) libsvmwrite.$(MEX_EXT)
 
-svmpredict.$(MEX_EXT):     svmpredict.c svm.h svm.o svm_model_matlab.o
-	$(MEX) $(MEX_OPTION) svmpredict.c svm.o svm_model_matlab.o
+libsvmpredict.$(MEX_EXT): libsvmpredict.c svm.h svm.o svm_model_matlab.o
+	$(MEX) $(MEX_OPTION) libsvmpredict.c svm.o svm_model_matlab.o
 
-svmtrain.$(MEX_EXT):       svmtrain.c svm.h svm.o svm_model_matlab.o
-	$(MEX) $(MEX_OPTION) svmtrain.c svm.o svm_model_matlab.o
+libsvmtrain.$(MEX_EXT): libsvmtrain.c svm.h svm.o svm_model_matlab.o
+	$(MEX) $(MEX_OPTION) libsvmtrain.c svm.o svm_model_matlab.o
 
-libsvmread.$(MEX_EXT):	libsvmread.c
+libsvmread.$(MEX_EXT): libsvmread.c
 	$(MEX) $(MEX_OPTION) libsvmread.c
 
-libsvmwrite.$(MEX_EXT):	libsvmwrite.c
+libsvmwrite.$(MEX_EXT): libsvmwrite.c
 	$(MEX) $(MEX_OPTION) libsvmwrite.c
 
-svm_model_matlab.o:     svm_model_matlab.c svm.h
+svm_model_matlab.o: svm_model_matlab.c svm.h
 	$(CXX) $(CFLAGS) -c svm_model_matlab.c
 
-svm.o:  svm.cpp svm.h
+svm.o: svm.cpp svm.h
 	$(CXX) $(CFLAGS) -c svm.cpp
 
 clean:
 	rm -f *~ *.o *.mex* *.obj
+

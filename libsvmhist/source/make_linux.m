@@ -5,8 +5,8 @@
 
 mex -O -largeArrayDims -c svm.cpp
 mex -O -largeArrayDims -c svm_model_matlab.c
-mex -O -largeArrayDims svmtrain.c svm.o svm_model_matlab.o
-mex -O -largeArrayDims svmpredict.c svm.o svm_model_matlab.o
+mex -O -largeArrayDims libsvmtrain.c svm.o svm_model_matlab.o
+mex -O -largeArrayDims libsvmpredict.c svm.o svm_model_matlab.o
 
 mex -O -largeArrayDims read_sparse.c
 
