@@ -50,6 +50,12 @@ svm_model_matlab.o: svm_model_matlab.c svm.h
 svm.o: svm.cpp svm.h
 	$(CXX) $(CFLAGS) -c svm.cpp
 
+copyfiles:
+	mv libsvmpredict.$(MEX_EXT) ../libsvmpredict.$(MEX_EXT)
+	mv libsvmtrain.$(MEX_EXT) ../libsvmtrain.$(MEX_EXT)
+	mv libsvmread.$(MEX_EXT) ../libsvmread.$(MEX_EXT)
+	mv libsvmwrite.$(MEX_EXT) ../libsvmwrite.$(MEX_EXT)
+
 clean:
 	rm -f *~ *.o *.mex* *.obj
 
