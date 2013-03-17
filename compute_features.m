@@ -113,5 +113,6 @@ end %function two_frames
 
 %%======================================================================
 function [xt] = translate_skeleton(x)
-
+    %%TODO !!!
+    error('compute_features: TODO');
 end %function translate_skeleton
