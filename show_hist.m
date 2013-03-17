@@ -1,7 +1,10 @@
 function show_hist(X, y, n_bins)
 %SHOTHIST Show some histograms.
+% show_hist(X, y, n_bins)
 %   First figure: 20 randomly selected histograms
 %   Second figure: first 20 histograms
+%
+%   Eg.: show_hist(X, y, 1000)
 %
 % Author: Samo Sela
 % e-mail: samo.sela-at-gmail.com
