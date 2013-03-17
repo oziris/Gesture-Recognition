@@ -33,7 +33,7 @@ fprintf('Load dataset\n');
 if exist([ DATA_PATH 'DATASET.mat'],'file')
     load([ DATA_PATH 'DATASET.mat']);
 else
-    DATASET = load_data_set(data_path);
+    DATASET = load_data_set(DATA_PATH);
 end    
 
 if(~exist('DATASET','var'))
@@ -92,7 +92,7 @@ fprintf('Divide dataset: train/test\n');
 %%=========================================================================
 %% TRANSFROM DATASET
 fprintf('\n===========================================================\n');
-fprintf('Cluster-based quantization\n');
+fprintf('Transform dataset\n');
 
 % reduce data set size by selecting a subset of actions
 %[F_sub, T_table] = get_sub_set( FEATURES, [4 5 10 11 12 13 2 1] );
