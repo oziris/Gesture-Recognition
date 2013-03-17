@@ -5,7 +5,8 @@ function [ TRAIN, TEST ] = divide_dataset_max( FEATURES, k, max )
 % [ TRAIN, TEST ] = divide_dataset_max( FEATURES, k, max )
 %
 %   FEATURES - dataset
-%   k   - k x train examples, (N-k) x test examples
+%   k   - first k subjects are in the train set 
+%         (N-k) subjects are in the test set
 %   max - maximum number of frames
 %
 % Author: Samo Sela
